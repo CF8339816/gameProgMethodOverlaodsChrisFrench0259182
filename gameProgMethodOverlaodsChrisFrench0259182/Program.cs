@@ -9,77 +9,138 @@ namespace gameProgMethodOverlaodsChrisFrench0259182
 {
 
 
+    //Random random = new Random();
+    //int randomNumber = random.Next(  ,  );
+
+
+
     internal class Program
     {
 
-
-          static string username;
-         static int health;
-        static int mana;
-
-
-    static string playerName = "Jub Jub";
-        static int playerhealth = 100;
-        static int playermana = 100;
+        static int sides;
+        static int times;
+        static Random random = new Random();
 
 
-        static string gobName = "GobbGob";
-        static int gobhealth = 50;
-        static int gobmana = 25;
 
-
-        static string orcName = "Thuganomics";
-        static int orchealth = 150;
-        static int orcmana = 50;
 
 
         static void Main(string[] args)
         {
+            //Random random = new Random();
+            //int roll = random.Next(1, sides + 1 );
 
-            DisplayCharacterInfo(playerName, playerhealth, playermana, 0.5F);
+            SixSide();
+            randSide();
+            RandSidesTimes();
+
+
+
+
+
+
+
+
+        }
+
+       //methods below here 
+       //m1
+       static void  SixSide()
+        {
+            sides = 6;
+                      
+            Console.WriteLine($" roll a 6  sided dice  ");
+            int roll = random.Next(1, sides + 1);
+
+            Console.WriteLine($" you rolled a {roll}");
             Console.ReadKey(true);
-                
-            DisplayCharacterInfo(gobName, gobhealth, gobmana);
-
-            DisplayCharacterInfo(orcName, orchealth, orcmana);
-
 
         }
 
-        static void DisplayCharacterInfo(string username, int health, int mana)
+
+
+        //m2
+        static void randSide()
         {
-            Console.WriteLine($"name:" + username);
-            Console.WriteLine($"name:" + health);
-            Console.WriteLine($"name:" + mana);
- 
+            
+            Console.WriteLine($" how many sides does your Die have?");
+           
+            sides = Convert.ToInt32( Console.ReadLine() );
+            Console.WriteLine($" roll a {sides} sided dice ");
+            int roll = random.Next(1, sides + 1);
+            Console.WriteLine($" you rolled a {roll}");
+            Console.ReadKey(true);
+
+
         }
-       //way to assign a default would be 
 
-   //static void DisplayCharacterInfo(int health, int mana, string username = "??????")
-   //     {
-   //         Console.WriteLine($"name:" + username);
-   //         Console.WriteLine($"name:" + health);
-   //         Console.WriteLine($"name:" + mana);
-
-   //     }
-        static void DisplayCharacterInfo(string username, int health, int mana, float specialAtk)
+        //m3
+        static void RandSidesTimes()
         {
-            Console.WriteLine($"name:" + username);
-            Console.WriteLine($"name:" + health);
-            Console.WriteLine($"name:" + mana);
+
+            Console.WriteLine($" how many sides does your Die have?");
+            sides = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($" how many times will you  rool your die?");
+            times = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($" roll a {sides} sided dice ");
+            int roll = random.Next(1, sides + 1);
+
+
+
+            Console.WriteLine($" you rolled a {roll}");
+            Console.ReadKey(true);
+
 
         }
 
-        static void DisplayCharacterInfo()
+
+        //m4
+        static void RandRed()
         {
-            Console.WriteLine($"name:" + playerName);
-            Console.WriteLine($"name:" + playerhealth);
-            Console.WriteLine($"name:" + playermana);
 
+            //Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($" how many sides does your Die have?");
+            sides = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($" how many times will you  rool your die?");
+            times = Convert.ToInt32(Console.ReadLine());
+            Console.Write($" roll a ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{sides} ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"sided dice ");
+            int roll = random.Next(1, sides + 1);
+
+            Console.Write($" you rolled a ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{sides} ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"sided dice ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{times} ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"timmes ");
+            Console.Write($" you rolled a ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{roll} ");
+            Console.ForegroundColor = ConsoleColor.White;
+
+        
+            Console.ReadKey(true);
+
+
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
 
-     
+
+        ////m5
+
+
+
+        ////m6
+
+
+
 
 
 
